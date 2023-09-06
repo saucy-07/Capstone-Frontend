@@ -47,6 +47,9 @@
 
 export default {
   name: "AdminView",
+  mounted() {
+    this.$store.dispatch('fetchProducts')
+  }
 };
 </script>
 
