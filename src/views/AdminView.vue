@@ -11,7 +11,7 @@
         <th>Product URL</th>
         <th>Action</th>
       </tr>
-      <tr v-for="(product, index) in products" :key="index">
+      <tr v-for="product,index in this.productsList" :key="index">
         <td>{{ product.productID }}</td>
         <td>{{ product.productName }}</td>
         <td>{{ product.gender }}</td>
@@ -22,10 +22,10 @@
         <td>
           <router-link
             :to="{
-              path: '../views/' + product.prodID + '/EditProductView.vue',
+              path: '../views/' + product.productID + '/EditProductView.vue',
             }"
             ><button class="edit">Edit</button></router-link
-          ><button @click="deleteProduct(product.productID)" class="delete">
+          ><button @click="deleteProduct(product.id)" class="delete">
             Delete
           </button>
         </td>
@@ -44,11 +44,20 @@
 </template>
 
 <script>
-
 export default {
   name: "AdminView",
+  computed: {
+    productsList() {
+      return this.$store.state.productsList
+    },
+  },
   mounted() {
-    this.$store.dispatch('fetchProducts')
+    this.$store.dispatch('fetchProducts', 'deleteProduct')
+  },
+  methods: {
+    deleteProduct(productID) {
+      this.$store.dispatch('deleteProduct', productID)
+    }
   }
 };
 </script>
@@ -67,8 +76,9 @@ th {
 }
 td {
   background-color: white;
-  width: 15%;
+  width: 10%;
   text-align: center;
+  padding: 5px 5px 5px 5px;
 }
 .delete,
 .edit {
@@ -77,8 +87,6 @@ td {
   width: 90%;
   margin: 5px 5px 5px 5px;
   border: none;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .edit {
   background-color: deepskyblue;
@@ -90,10 +98,10 @@ td {
   background-color: rgb(0, 84, 219);
 }
 .delete {
-  background-color: orange;
+  background-color: rgba(255, 0, 0, 0.642);
 }
 .delete:hover {
-  background-color: darkorange;
+  background-color: rgb(255, 0, 0);
 }
 .delete:active {
   background-color: rgb(255, 106, 0);
