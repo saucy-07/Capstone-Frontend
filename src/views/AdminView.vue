@@ -1,5 +1,8 @@
 <template>
   <div class="content-wrap">
+    <div class="add-product-div">
+      <button class="add-product-btn"><router-link class="add-product-link" to='/src/views/AddProductsView.vue'>Add Products</router-link></button>
+    </div>
     <table>
       <tr>
         <th>Product ID</th>
@@ -25,7 +28,7 @@
               path: '../views/' + product.productID + '/EditProductView.vue',
             }"
             ><button class="edit">Edit</button></router-link
-          ><button @click="deleteProduct(product.id)" class="delete">
+          ><button @click="deleteProduct(product.productID )" class="delete">
             Delete
           </button>
         </td>
@@ -115,7 +118,7 @@ td {
 .add-product-div {
   justify-content: center;
   align-content: center;
-  margin: auto auto 10px auto;
+  margin: 10px auto 10px auto;
   width: 100%;
   text-align: center;
 }
@@ -126,10 +129,12 @@ td {
   margin: 0 auto 0 auto;
   width: 100px;
   border: none;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   background-color: rgba(4, 255, 0, 0.936);
   height: 40px;
+}
+.add-product-link{
+  text-decoration: none;
+  color: black;
 }
 .add-users-div {
   text-align: right;
