@@ -70,8 +70,6 @@
 </template>
 
 <script>
-import axios from "axios";
-
 export default {
   name: "AddProductsView",
   data() {
@@ -95,17 +93,12 @@ export default {
         amount: this.product.amount,
         category: this.product.category,
         productUrl: this.product.productUrl,
-      }
+      };
       console.log(newproduct);
-      axios
-        .post("https://capstone-backend-cbw.onrender.com/products", newproduct)
-        .then((res) => {
-          console.log(res);
-          alert("You have added a new product");
-        })
-        .catch((err) => {
-            console.log(err);
-        })
+
+      this.$store.dispatch("insertProduct", newproduct);
+
+      alert("New Product Added");
     },
   },
 };
