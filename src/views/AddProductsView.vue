@@ -60,9 +60,14 @@
               />
             </div>
           </div>
-          <button @click="AddProduct()" class="add-product-btn">
-            Add Product
-          </button>
+          <div class="btn-div">
+            <button @click="AddProduct()" class="add-product-btn">
+              Add Product
+            </button>
+            <router-link to="/src/views/AdminView.vue">
+              <button class="close-btn">Close</button>
+            </router-link>
+          </div>
         </div>
       </div>
     </form>
@@ -106,7 +111,7 @@ export default {
 
 <style scoped>
 .content-wrap {
-  margin: 10% auto 0 auto;
+  margin: 5% auto 0 auto;
   min-height: 100vh;
 }
 .add-products-div {
@@ -137,17 +142,19 @@ export default {
   display: flex;
   flex-direction: column;
 }
+h1 {
+  text-align: center;
+  padding-bottom: 1%;
+}
 .close-btn {
   cursor: pointer;
   justify-content: center;
-  margin: 0 0 0 0;
+  margin: 0 auto 10px 5px;
   width: 100px;
   border: none;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
   background-color: orange;
-  height: 30px;
-  margin-right: 10px;
+  height: 40px;
 }
 .close-btn:hover {
   background-color: darkorange;
@@ -158,19 +165,19 @@ export default {
 .add-product-btn {
   cursor: pointer;
   justify-content: center;
-  margin: 0 0 0 0;
+  margin: 0 5px 10px auto;
   width: 100px;
   border: none;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   background-color: rgba(4, 255, 0, 0.936);
-  height: 30px;
-  margin-right: 10px;
+  height: 40px;
 }
 .add-product-btn:hover {
   background-color: rgb(76, 252, 0);
 }
 .add-product-btn:active {
   background-color: rgb(0, 205, 0);
+}
+.btn-div {
+  text-align: center;
 }
 </style>
