@@ -3,7 +3,6 @@
     <div class="sort-filter-div">
       <div class="category-filter">
         <p>Category:</p>
-        <button @click="showAll = ['Ball Python','Corn Snake','Kingsnake']" class="category-btn">All Snakes</button>
         <button @click="categoryFilter = 'Ball Python'" class="category-btn">Ball Pythons</button>
         <button @click="categoryFilter = 'Corn Snake'" class="category-btn">Corn Snakes</button>
         <button @click="categoryFilter = 'Kingsnake'" class="category-btn">Kingsnakes</button>
@@ -21,7 +20,7 @@
     </div>
     <div class="page">
       <div class="big-div">
-        <div class="products-div" v-if="products">
+        <div class="products-div" v-if="filteredProducts">
           <div class="product" v-show="product.category === categoryFilter" v-for="product of filteredProducts" :key="product">
             <div class="image-div">
               <img :src="product.productUrl" :alt="product.productName" />
@@ -49,8 +48,6 @@ export default {
   data () {
     return {
       search: "",
-      // showAll: this.$store.state.productsList,
-      showAll: ['Ball Python','Corn Snake','Kingsnake'],
       categoryFilter: 'Ball Python',
       categoryFilter: 'Corn Snake',
       categoryFilter: 'Kingsnake',

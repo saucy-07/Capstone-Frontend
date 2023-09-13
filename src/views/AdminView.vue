@@ -1,7 +1,13 @@
 <template>
   <div class="content-wrap">
     <div class="add-product-div">
-      <button class="add-product-btn"><router-link class="add-product-link" to='/src/views/AddProductsView.vue'>Add Products</router-link></button>
+      <button class="add-product-btn">
+        <router-link
+          class="add-product-link"
+          to="/src/views/AddProductsView.vue"
+          >Add Products</router-link
+        >
+      </button>
     </div>
     <table>
       <tr>
@@ -14,7 +20,7 @@
         <th>Product URL</th>
         <th>Action</th>
       </tr>
-      <tr v-for="product,index in this.productsList" :key="index">
+      <tr v-for="(product, index) in this.productsList" :key="index">
         <td>{{ product.productID }}</td>
         <td>{{ product.productName }}</td>
         <td>{{ product.gender }}</td>
@@ -28,7 +34,51 @@
               path: '../views/' + product.productID + '/EditProductView.vue',
             }"
             ><button class="edit">Edit</button></router-link
-          ><button @click="deleteProduct(product.productID )" class="delete">
+          ><button @click="deleteProduct(product.productID)" class="delete">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </table>
+
+    <br />
+
+    <div class="add-product-div">
+      <button class="add-product-btn">
+        <router-link
+          class="add-product-link"
+          to="/src/views/AddUsersView.vue"
+          >Add Users</router-link
+        >
+      </button>
+    </div>
+
+    <table>
+      <tr>
+        <th>User ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Gender</th>
+        <th>Email Address</th>
+        <th>Profile Picture URL</th>
+        <th>User Password</th>
+        <th>Action</th>
+      </tr>
+      <tr v-for="(user, index) in this.usersList" :key="index">
+        <td>{{ user.userID }}</td>
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.gender }}</td>
+        <td>{{ user.emailAddress }}</td>
+        <td>{{ user.profileUrl }}</td>
+        <td>{{ user.userPass }}</td>
+        <td>
+          <router-link
+            :to="{
+              path: '../views/' + user.userID + '/EditProductView.vue',
+            }"
+            ><button class="edit">Edit</button></router-link
+          ><button @click="deleteProduct(user.userID)" class="delete">
             Delete
           </button>
         </td>
@@ -50,18 +100,22 @@
 export default {
   name: "AdminView",
   computed: {
+    usersList() {
+      return this.$store.state.usersList;
+    },
     productsList() {
-      return this.$store.state.productsList
+      return this.$store.state.productsList;
     },
   },
   mounted() {
-    this.$store.dispatch('fetchProducts', 'deleteProduct')
+    this.$store.dispatch("fetchProducts", "deleteProduct"),
+      this.$store.dispatch("fetchUsers");
   },
   methods: {
     deleteProduct(productID) {
-      this.$store.dispatch('deleteProduct', productID)
-    }
-  }
+      this.$store.dispatch("deleteProduct", productID);
+    },
+  },
 };
 </script>
 
@@ -132,7 +186,7 @@ td {
   background-color: rgba(4, 255, 0, 0.936);
   height: 40px;
 }
-.add-product-link{
+.add-product-link {
   text-decoration: none;
   color: black;
 }
