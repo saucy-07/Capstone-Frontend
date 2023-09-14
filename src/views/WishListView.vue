@@ -1,5 +1,7 @@
 <template>
-    Wish List View
+    <div class="content-wrap">
+        <h1>Wish List</h1>
+    </div>
 </template>
 
 <script>
@@ -9,5 +11,7 @@ export default {
 </script>
 
 <style scoped>
-
+.content-wrap {
+  min-height: 100vh;
+}
 </style>

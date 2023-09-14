@@ -1,5 +1,5 @@
 <template>
-  <NavBarComp style="position: relative"/>
+  <NavBarComp style="position: sticky"/>
   <router-view />
   <FooterComp style="position: relative"/>
 </template>

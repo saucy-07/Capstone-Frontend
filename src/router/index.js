@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '/src/views/HomeView.vue'
 
 const routes = [
   {
@@ -44,6 +44,31 @@ const routes = [
     path: '/src/views/AddUsersView.vue',
     name: 'addUsers',
     component: () => import('../views/AddUsersView.vue')
+  },
+  {
+    path: '/src/views/WishListView.vue',
+    name: 'wishlist',
+    component: () => import('../views/WishListView.vue')
+  },
+  {
+    path: '/src/views/LogInView.vue',
+    name: 'login',
+    component: () => import('/src/views/LogInView.vue')
+  },
+  {
+    path: '/src/views/SignUpView.vue',
+    name: 'signUp',
+    component: () => import('../views/SignUpView.vue')
+  },
+  {
+    path: '/src/views/CheckoutView.vue',
+    name: 'checkout',
+    component: () => import('../views/CheckoutView.vue')
+  },
+  {
+    path: '/src/views/CartView.vue',
+    name: 'cart',
+    component: () => import('../views/CartView.vue')
   }
 ]
 
