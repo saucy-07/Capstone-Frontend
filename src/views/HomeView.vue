@@ -51,7 +51,9 @@
       </div>
       </div>
     </div>
-    <!-- <router-link to="/src/views/ProductsView.vue">Products</router-link> -->
+    <div class="products-link-div">
+      <button class="products-bar-div"><router-link class="products-link" to="/src/views/ProductsView.vue">Products</router-link></button>
+    </div>
   </div>
 </template>
 
@@ -63,7 +65,7 @@ export default {
 
 <style scoped>
 .content-wrap{
-  min-height: 100vh;
+  min-height: 50vw;
 }
 .hero-div {
   width: 98%;
@@ -92,11 +94,12 @@ img {
   margin: 1vw 2vw 1vw 2vw;
 }
 .category-header p {
-  font-size: 4vw;
+  font-size: 3vw;
 }
 .product-category-div{
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 2vh;
 }
 .snake-div{
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
@@ -114,6 +117,29 @@ img {
 }
 .snake-category-info p{
   font-size: 2vw;
+}
+.products-link-div{
+  text-align: center;
+}
+.products-bar-div:hover {
+  background-color: rgb(76, 252, 0);
+}
+.products-bar-div:active {
+  background-color: rgb(0, 205, 0);
+}
+.products-bar-div {
+  cursor: pointer;
+  justify-content: center;
+  margin: 0 auto 1vw auto;
+  width: 8vw;
+  border: none;
+  background-color: rgba(4, 255, 0, 0.936);
+  height: 2.3vw;
+  font-size: 1.4vw;
+}
+.products-link {
+  text-decoration: none;
+  color: black;
 }
 @media only screen and (max-width: 565px) {
   .top-right{
