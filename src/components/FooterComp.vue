@@ -4,15 +4,15 @@
             <div class="information-div">
                 <p style="color: black; text-decoration: underline;"><strong>Information</strong></p>
                 <ul>
-                    <li><router-link to="../../src/views/AboutView.vue">About Us</router-link></li>
-                    <li><router-link to="../../src/views/PrivacyPolicyView.vue">Privacy Policy</router-link></li>
-                    <li><router-link to="../../src/views/T&CsView.vue">T&C's</router-link></li>
+                    <li><router-link class="router-link" to="../../src/views/AboutView.vue">About Us</router-link></li>
+                    <li><router-link class="router-link" to="../../src/views/PrivacyPolicyView.vue">Privacy Policy</router-link></li>
+                    <li><router-link class="router-link" to="../../src/views/T&CsView.vue">T&C's</router-link></li>
                 </ul>
             </div>
             <div class="contact-div">
                 <p style="color: black; text-decoration: underline;"><strong>Contact</strong></p>
                 <ul>
-                    <li><router-link to="../../src/views/ContactView.vue">Contact Us</router-link></li>
+                    <li><router-link class="router-link" to="../../src/views/ContactView.vue">Contact Us</router-link></li>
                     <li><p>Email: danger@noodle.co.za</p></li>
                     <li><p>Telephone: 021-772-7794</p></li>
                 </ul>
@@ -82,6 +82,10 @@ footer{
 }
 .copyright-div{
     text-align: center;
+}
+.router-link{
+    text-decoration: none;
+    color: white;
 }
 @media only screen and (max-width: 500px) {
     .content-wrap{
