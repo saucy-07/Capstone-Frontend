@@ -79,12 +79,13 @@ export default {
   text-align: center;
 }
 .image-div img {
-  height: 200px;
-  width: 200px;
+  height: 15vw;
+  width: 15vw;
 }
 .product {
   padding: 10px;
-  width: 300px;
+  height: fit-content;
+  width: 20vw;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-color: white;
   margin-bottom: 40px;
@@ -95,5 +96,40 @@ export default {
 h1 {
   text-align: center;
   margin-top: 15px;
+}
+.sort-filter-div{
+  background-color: grey;
+  width: 30vw;
+  height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+}
+.category-filter, .sort-search-div, .search-div, .sort-div{
+  display: flex;
+  justify-content: space-evenly;
+}
+.category-filter, .search-div, .sort-div{
+  padding-top: 1vw;
+  font-size: 1vw;
+}
+.search-bar, .sort-btn, .category-btn{
+  height: 1.2vw;
+  font-size: 1vw;
+}
+.category-btn, .sort-btn, .search-bar{
+  background-color: rgb(190, 190, 190);
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+@media only screen and (max-width: 500px){
+  .products-div{
+    display: flex;
+    flex-direction: column;
+  }
+  .product{
+    width: 30vw
+  }
 }
 </style>
