@@ -4,22 +4,15 @@
             <div class="information-div">
                 <p style="color: black; text-decoration: underline;"><strong>Information</strong></p>
                 <ul>
-                    <li><p>About Us</p></li>
-                    <li><p>Privacy Policy</p></li>
-                    <li><p>T&C's</p></li>
-                </ul>
-            </div>
-            <div class="account-div">
-                <p style="color: black; text-decoration: underline;"><strong>Account</strong></p>
-                <ul>
-                    <li><p>My Account</p></li>
-                    <li><p>Wish List</p></li>
+                    <li><router-link to="../../src/views/AboutView.vue">About Us</router-link></li>
+                    <li><router-link to="../../src/views/PrivacyPolicyView.vue">Privacy Policy</router-link></li>
+                    <li><router-link to="../../src/views/T&CsView.vue">T&C's</router-link></li>
                 </ul>
             </div>
             <div class="contact-div">
                 <p style="color: black; text-decoration: underline;"><strong>Contact</strong></p>
                 <ul>
-                    <li><p>Contact Us</p></li>
+                    <li><router-link to="../../src/views/ContactView.vue">Contact Us</router-link></li>
                     <li><p>Email: danger@noodle.co.za</p></li>
                     <li><p>Telephone: 021-772-7794</p></li>
                 </ul>
@@ -67,7 +60,7 @@ footer{
     bottom: 0;
     width: 100%;
 }
-.information-div, .account-div, .contact-div{
+.information-div, .contact-div{
     margin-left: auto;
     margin-right: auto;
     justify-content: center;

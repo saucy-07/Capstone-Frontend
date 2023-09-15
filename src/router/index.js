@@ -69,6 +69,21 @@ const routes = [
     path: '/src/views/CartView.vue',
     name: 'cart',
     component: () => import('../views/CartView.vue')
+  },
+  {
+    path: '/src/views/PrivacyPolicyView.vue',
+    name: 'privacyPolicy',
+    component: () => import('../views/PrivacyPolicyView.vue')
+  },
+  {
+    path: '/src/views/T&CsView.vue',
+    name: 't&cs',
+    component: () => import('../views/T&CsView.vue')
+  },
+  {
+    path: '/src/views/ContactView.vue',
+    name: 'contact',
+    component: () => import('../views/ContactView.vue')
   }
 ]
 
